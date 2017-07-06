@@ -1,0 +1,145 @@
+---
+---
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #151515;
+    font-weight: bold;
+}
+
+
+body {
+    background-color: #F5F5F5;
+    color: #202020;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    
+    &::-webkit-scrollbar { 
+        display: none; 
+    }
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 2em;
+
+    .menu-item {
+        margin-left: 15px;
+    }
+}
+
+.header {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #DCDCDC;
+
+    .title-group {
+        margin-left: 3vw;
+        position: relative;
+        top: -15vh;
+
+        .page-title {
+            font-size: 5em;
+        }
+
+        .page-sub {
+            font-size: 1.2em;
+        }
+    }
+}
+
+.section-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding: 10vmin;
+
+    .project {
+        margin: 2vmin;
+        background-color: #F9F9F9;
+        padding: 30px;
+
+        .project-desc {
+            margin-top: 20px;
+            font-size: 1.3em;
+            text-align: justify;
+
+            p {
+                margin: 10px 0px;
+            }
+        }
+
+        .date {
+            padding-top: 10px;
+            color: #505050
+        }
+    }
+    
+
+    .left {
+        text-align: left;
+        align-items: left;
+        margin-right: 30%;
+
+        .card {
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .right {
+        text-align: right;
+        align-items: right;
+        margin-left: 30%;
+
+        .card {
+            float: right;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.animated {
+    animation: type 4s steps(60, end);
+}
+
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; } 
+} 
+
+@keyframes blink{
+  to{opacity: .0;}
+}

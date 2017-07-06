@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<html>
+  <head>
+    <title>Codesign Theory</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900|Source+Code+Pro:400,700|Roboto+Mono:400,400i,700,700i" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="menu">
+      <a class="menu-item" href="#">Home</a>
+      <a class="menu-item" href="#projects">Projects</a>
+    </div>
+    <div class="header">
+      <div class="title-group" id="head">
+        <h1 class="page-title">{{site.title}}</h1>
+        <h3 class="page-sub">{{site.description}}</h3>
+      </div>
+    </div>
+    <div class="projects" id="projects">
+      {% for project in site.projects %}
+      <div class="project">
+        <div class="project-title">Demo Project</div>
+        <div class="project-desc">Bla bla bla</div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
