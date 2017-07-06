@@ -1,38 +1,20 @@
 ---
 layout: default
+title: 'home'
 ---
-<html>
-  <head>
-    <title>Codesign Theory</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900|Source+Code+Pro:400,700|Roboto+Mono:400,400i,700,700i" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet"/>
-  </head>
-  <body>
-    <div id="menu">
-      <a class="menu-item" href="#">Home</a>
-      <a class="menu-item" href="#projects">Projects</a>
+{% assign sorted_projects = site.projects | sort:"date" %}
+<div class="projects" id="projects">
+  <h1 class="section-header">Co-creations</h1>
+  {% for project in sorted_projects %}
+  <div class="project {% cycle 'left', 'right' %}">
+    <div class="card">
+      <div class="github-card" data-github="codesigntheory/rapnet" data-width="400" data-height="" data-theme="medium"></div>
     </div>
-    <div class="header">
-      <div class="title-group" id="head">
-        <h1 class="page-title">{{site.title}}</h1>
-        <h3 class="page-sub">{{site.description}}</h3>
-      </div>
-    </div>
-    {% assign sorted_projects = site.projects | sort:"date" %}
-    <div class="projects" id="projects">
-      <h1 class="section-header">Projects</h1>
-      {% for project in sorted_projects %}
-      <div class="project {% cycle 'left', 'right' %}">
-        <div class="card">
-          <div class="github-card" data-github="codesigntheory/rapnet" data-width="400" data-height="" data-theme="medium"></div>
-        </div>
-        <h1 class="project-title">{{ project.title }}</h1>
-        <div class="date">{{ project.date | date:"%d/%m/%Y"}}</div>
-        <div class="date">Language: {{ project.language }}</div>
-        <div class="project-desc">{{ project.content | markdownify }}</div>
-      </div>
-      {% endfor %}
-    </div>
-    <script src="//lab.lepture.com/github-cards/widget.js"></script>
-  </body>
-</html>
+    <h1 class="project-title">{{ project.title }}</h1>
+    <div class="date">{{ project.date | date:"%d/%m/%Y"}}</div>
+    <div class="date">Language: {{ project.language }}</div>
+    <div class="project-desc">{{ project.content | markdownify }}</div>
+  </div>
+  {% endfor %}
+</div>
+<script src="//lab.lepture.com/github-cards/widget.js"></script>
